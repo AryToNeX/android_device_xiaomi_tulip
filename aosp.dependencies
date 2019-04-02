@@ -6,6 +6,12 @@
    "remote": "github"
  },
  {
+   "repository": "AryToNeX/android_vendor_xiaomi_Dirac",
+   "target_path": "vendor/xiaomi/Dirac",
+   "branch": "pie",
+   "remote": "github"
+ },
+ {
     "repository" : "rama982/android_kernel_xiaomi_tulip",
     "target_path": "kernel/xiaomi/tulip",
     "branch": "mkp",
