@@ -156,7 +156,8 @@ PRODUCT_PACKAGES += \
 # CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
-    com.quicinc.cne
+    com.quicinc.cne \
+    services-ext
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
