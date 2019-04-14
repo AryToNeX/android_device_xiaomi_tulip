@@ -88,6 +88,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     org.ifaa.android.manager
 
+# NoCutout
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-impl:32 \
