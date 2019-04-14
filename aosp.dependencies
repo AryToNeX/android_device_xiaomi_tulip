@@ -1,0 +1,18 @@
+[
+ {
+   "repository": "AryToNeX/android_vendor_xiaomi_tulip",
+   "target_path": "vendor/xiaomi/tulip",
+   "branch": "pie",
+   "remote": "github"
+ },
+ {
+    "repository" : "rama982/android_kernel_xiaomi_tulip",
+    "target_path": "kernel/xiaomi/tulip",
+    "branch": "mkp",
+    "remote": "github"
+ },
+ {
+    "repository": "android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings"
+ }
+]

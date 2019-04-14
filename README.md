@@ -1,4 +1,4 @@
-Copyright 2018 - The Mokee Project
+Copyright 2018 - The Android Open Source Project
 
 The Xiaomi Redmi Note 6 Pro (codenamed _"tulip"_) is a mid-range smartphone from Xiaomi announced in September 2018.
 

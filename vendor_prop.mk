@@ -274,7 +274,3 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
 # ZRAM disk
 PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.vendor.qti.config.zram=true
-
-# Mokee maintainer
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.mk.maintainer=rama982
