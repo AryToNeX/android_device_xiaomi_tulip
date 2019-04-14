@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.mokee.settings.doze;
+package org.lineageos.settings.doze;
 
 import android.content.Context;
 import android.content.Intent;
@@ -27,7 +27,7 @@ import android.util.Log;
 
 import static android.provider.Settings.Secure.DOZE_ENABLED;
 
-public final class Utils {
+public final class DozeUtils {
 
     private static final String TAG = "DozeUtils";
     private static final boolean DEBUG = false;
@@ -40,7 +40,7 @@ public final class Utils {
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
 
-    protected static void startService(Context context) {
+    public static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
         context.startServiceAsUser(new Intent(context, DozeService.class),
                 UserHandle.CURRENT);
@@ -71,7 +71,7 @@ public final class Utils {
         }
     }
 
-    protected static boolean isDozeEnabled(Context context) {
+    public static boolean isDozeEnabled(Context context) {
         return Settings.Secure.getInt(context.getContentResolver(),
                 DOZE_ENABLED, 1) != 0;
     }
@@ -85,11 +85,6 @@ public final class Utils {
         if (DEBUG) Log.d(TAG, "Launch doze pulse");
         context.sendBroadcastAsUser(new Intent(DOZE_INTENT),
                 new UserHandle(UserHandle.USER_CURRENT));
-    }
-
-    protected static void enableGesture(Context context, String gesture, boolean enable) {
-        PreferenceManager.getDefaultSharedPreferences(context).edit()
-                .putBoolean(gesture, enable).apply();
     }
 
     protected static boolean isGestureEnabled(Context context, String gesture) {
@@ -109,7 +104,7 @@ public final class Utils {
         return isGestureEnabled(context, GESTURE_POCKET_KEY);
     }
 
-    protected static boolean sensorsEnabled(Context context) {
+    public static boolean sensorsEnabled(Context context) {
         return isPickUpEnabled(context) || isHandwaveGestureEnabled(context)
                 || isPocketGestureEnabled(context);
     }
