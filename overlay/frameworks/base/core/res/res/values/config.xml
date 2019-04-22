@@ -582,6 +582,15 @@
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
 
+    <!-- Proximity check on screen wake -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+	
+	<!-- The time the proximity sensor takes to determine if it's covered -->
+    <integer name="config_proximityCheckTimeout">400</integer>
+	
+	<!-- Whether the proximity check should be enabled by default -->
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
+
     <!-- Whether to show multiuser icon on keyguard -->
     <bool name="config_showMultiuserIconKeyguard">false</bool>
 </resources>
