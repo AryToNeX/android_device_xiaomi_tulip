@@ -20,7 +20,7 @@ DEVICE_PROVISIONED=1
 #
 # Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
 #
-ro.telephony.default_network=22,20
+ro.telephony.default_network=9,9
 
 debug.sf.enable_hwc_vds=1
 debug.sf.hw=1
@@ -31,8 +31,9 @@ dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 #Disable Skip Validate
 sdm.debug.disable_skip_validate=1
+ro.colorpick_adjust=true
 #Property to enable display default color mode
-vendor.display.enable_default_color_mode=0
+vendor.display.enable_default_color_mode=1
 
 # Display Properties as per treble compliance
 vendor.gralloc.enable_fb_ubwc=1
@@ -53,6 +54,7 @@ media.stagefright.enable-scan=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
+
 persist.mm.enable.prefetch=true
 
 #property to enable narrow search range for video encoding
@@ -79,6 +81,8 @@ persist.timed.enable=true
 
 # system property for maximum number of HFP client connections
 bt.max.hfpclient.connections=1
+#force disable Bluetooth AAC by default
+persist.bt.a2dp.aac_disable=true
 
 # System property for cabl
 ro.qualcomm.cabl=0
@@ -184,7 +188,6 @@ vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qual
 
 #back and fornt camera use different face detect parameters
 
-
 #disable UBWC for camera
 persist.vendor.camera.preview.ubwc=0
 
@@ -219,11 +222,16 @@ ro.audio.soundfx.dirac=true
 
 #system prop for Bluetooth SOC type
 vendor.bluetooth.soc=cherokee
+persist.vendor.btstack.enable.splita2dp=true
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 
 # Property for backup NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
 # enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
+
+#add colorpicker
+ro.colorpick_adjust=true
 
 #lct.ydt 20180911 add for voWIFI
 #iwaln vowifi corresponding
@@ -235,25 +243,27 @@ persist.vendor.radio.snapshot_timer=5
 #HTH-30190 connect wifi, set 3G pre,observe Mobile network type should display UMTS but IWLAN.
 persist.vendor.radio.data_con_rprt=1
 
+#add colorInvert
+ro.vendor.df.effect.conflict=1
+persist.sys.df.extcolor.proc=0
+#paper mode
+sys.paper_mode_max_level=32
+sys.tianma_nt36672a_offset=22
+sys.tianma_nt36672a_length=44
+sys.shenchao_nt36672a_offset=12
+sys.shenchao_nt36672a_length=47
+sys.boe_ft8719_offset=13
+sys.boe_ft8719_length=43
+
 # enable b-services aging propagation
 ro.vendor.qti.sys.fw.bservice_enable=true
 
 # screen dpi
 ro.sf.lcd_density=440
 
-# Add from miui
-debug.sf.disable_backpressure=1	
-persist.vendor.radio.report_codec=1		
-persist.vendor.radio.redir_party_num=1		
-ro.config.media_vol_default=10
-persist.radio.apm_sim_not_pwdn=1
-
 #
-# PROPERTIES FOR IMS from oreo
+# PROPERTIES FOR IMS
 #
-persist.dbg.ims_volte_enable=1
-persist.radio.videopause.mode=1
-persist.data.iwlan.enable=true
+persist.dbg.ims_volte_enable=1 
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1 
-persist.radio.VT_HYBRID_ENABLE=1
