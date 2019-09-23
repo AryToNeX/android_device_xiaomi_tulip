@@ -55,7 +55,12 @@ BOARD_HAVE_QCOM_FM := true
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-lineage
+    $(DEVICE_PATH)/overlay-common
+    
+ifneq ($(wildcard $(DEVICE_PATH)/overlay-$(SMARTBUILD_RELEASE)/.),)
+    DEVICE_PACKAGE_OVERLAYS += \
+        $(DEVICE_PATH)/overlay-$(SMARTBUILD_RELEASE)
+endif
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage/lineage-sdk

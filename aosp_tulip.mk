@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2019 The LineageOS Project
+# Copyright (C) 2018-2019 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +14,20 @@
 # limitations under the License.
 #
 
-# Inherit some common Lineage stuff
-SMARTBUILD_RELEASE_CONFIG := vendor/lineage/config/common_full_phone.mk
+# Inherit some common AOSP stuff
+SMARTBUILD_RELEASE_CONFIG := vendor/aosp/common.mk
 
-PRODUCT_NAME := lineage_tulip
+TARGET_BOOT_ANIMATION_RES := 2280
+TARGET_USE_JELLY := true
+
+# GApps
+ifeq ($(CURRENT_BUILD_TYPE), gapps)
+    TARGET_SHIPS_SEPERATE_GAPPS_BUILD := true
+    WITH_GAPPS := true
+    TARGET_GAPPS_ARCH := arm64
+    IS_PHONE := true
+endif
+
+PRODUCT_NAME := aosp_tulip
 
 include $(LOCAL_PATH)/common_tulip.mk

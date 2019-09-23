@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018-2019 The LineageOS Project
+# Copyright (C) 2018-2019 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,10 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_tulip.mk
+    $(LOCAL_DIR)/$(SMARTBUILD_RELEASE)_tulip.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_tulip-user \
-    lineage_tulip-userdebug \
-    lineage_tulip-eng
-
+    $(SMARTBUILD_RELEASE)_tulip-user \
+    $(SMARTBUILD_RELEASE)_tulip-userdebug \
+    $(SMARTBUILD_RELEASE)_tulip-eng
