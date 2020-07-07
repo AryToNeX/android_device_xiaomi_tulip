@@ -62,8 +62,10 @@ ifneq ($(wildcard $(DEVICE_PATH)/overlay-$(SMARTBUILD_RELEASE)/.),)
         $(DEVICE_PATH)/overlay-$(SMARTBUILD_RELEASE)
 endif
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage/lineage-sdk
+ifeq ($(SMARTBUILD_RELEASE),lineage)
+    PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+        $(LOCAL_PATH)/overlay-lineage/lineage-sdk
+endif
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
