@@ -32,6 +32,14 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # Inherit properties.mk
 $(call inherit-product, $(DEVICE_PATH)/properties.mk)
 
+ifneq ($(wildcard $(DEVICE_PATH)/properties-common.mk),)
+    $(call inherit-product, $(DEVICE_PATH)/properties-common.mk)
+endif
+
+ifneq ($(wildcard $(DEVICE_PATH)/properties-$(SMARTBUILD_RELEASE).mk),)
+    $(call inherit-product, $(DEVICE_PATH)/properties-$(SMARTBUILD_RELEASE).mk)
+endif
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
